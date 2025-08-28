@@ -11,6 +11,34 @@ public class Tarefa {
     private boolean completa;
     private LocalDateTime dataAgora;
 
+    public Tarefa(){
+        this.dataAgora = LocalDateTime.now();
+        this.completa = false;
+    }
+
+    // Construtor com Titulo
+
+    public Tarefa(String titulo){
+        this();
+        this.titulo = titulo;
+    }
+
+    //Construtor com Titulo e Descricao
+
+    public Tarefa(String titulo, String descricao){
+        this(titulo);
+        this.descricao = descricao;
+    }
+
+    //Construtor completo
+
+    public Tarefa(Long id, String titulo, String descricao, boolean completa){
+        this(titulo, descricao);
+        this.id = id;
+        this.completa = completa;
+    }
+
+
     public Tarefa(Long id, boolean completa) {
         this.id = id;
         this.completa = completa;
