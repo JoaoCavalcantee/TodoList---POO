@@ -1,4 +1,7 @@
 package ucb.aplicativo.cli;
+import ucb.aplicativo.control.TarefaServico;
+
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
@@ -6,9 +9,9 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("*****************************");
-        System.out.println("*Bem-Vindo Lista de Tarefas!*");
-        System.out.println("*****************************");
+        System.out.println("*****************************************************");
+        System.out.println("************ Bem-Vindo Lista de Tarefas *************");
+        System.out.println("*****************************************************");
 
         int opcao = 0;
 
@@ -24,10 +27,45 @@ public class Main {
             opcao = entrada.nextInt();
 
             switch (opcao) {
-                case 1: //Adicionar nova tarefa 
+                case 1: //Adicionar nova tarefa
+                    System.out.println("=====================================================");
+                    System.out.println("================= Criar nova Tarefa =================");
+                    System.out.println("=====================================================");
+
+                    System.out.println("ID: ");
+                    long id = entrada.nextLong();
+                    entrada.nextLine();
+
+                    System.out.println("Nome: ");
+                    String nome = entrada.nextLine();
+
+                    System.out.println("Descricao: ");
+                    String descricao = entrada.nextLine();
+
+                    System.out.println("Concluida?: (s/n) ");
+                    String resposta = entrada.next().toLowerCase(); //Correcao do DeepSeek
+                    boolean concluida = resposta.equals("s") || resposta.equals("sim"); //Correcao do DeepSeek
+
+                    //TODO: Da maneira que esta o dataCriacao esta criando uma data e horario para o exato momento em que a task eh registrada, precisa trocar para que o usuario coloque manualmente, eu acho!
+                    String dataCriacao = java.time.LocalDateTime.now().toString();
+                    System.out.println("Data de criacao: " + dataCriacao + " (automatica)");
+
+                    TarefaServico.AdicionarTarefa(id, nome, descricao, concluida, dataCriacao);
+
+                    //Limpar Scanner
+                    entrada.nextLine();
+
                     break;
 
                 case 2: //Visualizar nova lista de Tarefas
+
+                    //Esta pronto aqui
+                    System.out.println("=====================================================");
+                    System.out.println("================= Lista de Tarefas! =================");
+                    System.out.println("=====================================================");
+
+                    TarefaServico.VisualizarTarefa();
+
                     break;
 
                 case 3: //Editar Tarefa
