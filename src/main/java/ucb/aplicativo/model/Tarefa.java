@@ -46,42 +46,52 @@ public class Tarefa {
         return contadorId;
     }
 
-    public Long getId() {
-        return id;
-    }
+
+    //Setters ((SET) -> Alterar Variavel Privada)
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    public boolean isCompleta() {
-        return completa;
-    }
-
     public void setCompleta(boolean completa) {
         this.completa = completa;
+    }
+
+    public void setDataAgora(LocalDateTime dataAgora) {
+        this.dataAgora = dataAgora;
+    }
+
+
+    //Getters ((GET) -> Resgatar Valor de Variavel Privada)
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public boolean isCompleta() {
+        return completa;
     }
 
     public LocalDateTime getDataAgora() {
         return dataAgora;
     }
 
-    public void setDataAgora(LocalDateTime dataAgora) {
-        this.dataAgora = dataAgora;
-    }
+
 }
+

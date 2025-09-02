@@ -24,7 +24,33 @@ public class Main {
             opcao = entrada.nextInt();
 
             switch (opcao) {
-                case 1: //Adicionar nova tarefa 
+                case 1: //Adicionar nova tarefa
+                    System.out.println("=======================");
+                    System.out.println("== Criar Nova Tarefa ==");
+                    System.out.println("=======================");
+
+                    System.out.println("ID: ");
+                    int id = entrada.nextInt();
+
+                    System.out.println("Nome: ");
+                    String nome = entrada.next();
+
+                    System.out.println("Descricao: ");
+                    String descricao = entrada.next();
+
+                    System.out.println("Concluida?: (True/False) ");
+                    boolean concluida = entrada.nextBoolean();
+
+                    System.out.println("Data de Criacao: (yyyy-mm-dd) ");
+                    String dataIniciodaTarefa = entrada.nextLine();
+
+                    //TODO: Colocar as informacoes coletadas no metodo e criar uma task
+
+                    System.out.println("Tarefa criada com sucesso!");
+
+                    //Limpar Scanner
+                    entrada.nextLine();
+
                     break;
 
                 case 2: //Visualizar nova lista de Tarefas
