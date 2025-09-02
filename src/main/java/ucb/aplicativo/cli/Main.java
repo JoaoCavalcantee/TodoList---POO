@@ -1,7 +1,7 @@
 package ucb.aplicativo.cli;
 import java.util.Scanner;
 
-public class java {
+public class Main {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
