@@ -13,6 +13,7 @@ public class Main {
         int opcao = 0;
 
         do {
+            System.out.println();
             System.out.println("1 - Para Adicionar Nova Tarefa");
             System.out.println("2 - Para Visualizar a Lista de Tarefas");
             System.out.println("3 - Para Editar Tarefa");

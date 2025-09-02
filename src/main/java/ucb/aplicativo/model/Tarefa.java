@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Tarefa {
 
+    private static Long contadorId = 0L;
+
     private Long  id;
     private String titulo;
     private String descricao;
@@ -14,6 +16,7 @@ public class Tarefa {
     public Tarefa(){
         this.dataAgora = LocalDateTime.now();
         this.completa = false;
+        this.id = gerarIdAutomatico();
     }
 
     // Construtor com Titulo
@@ -38,10 +41,9 @@ public class Tarefa {
         this.completa = completa;
     }
 
-
-    public Tarefa(Long id, boolean completa) {
-        this.id = id;
-        this.completa = completa;
+    private static Long gerarIdAutomatico(){
+        contadorId++;
+        return contadorId;
     }
 
     public Long getId() {
