@@ -1,5 +1,6 @@
 package ucb.aplicativo.cli;
 import ucb.aplicativo.control.TarefaServico;
+import ucb.aplicativo.model.Tarefa;
 
 import java.util.Scanner;
 
@@ -8,11 +9,11 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("*****************************************************");
-        System.out.println("*********** Bem-Vindo a Lista de Tarefas! ***********");
-        System.out.println("*****************************************************");
+        //System.out.println("*****************************************************");
+        //System.out.println("*********** Bem-Vindo a Lista de Tarefas! ***********");
+        //System.out.println("*****************************************************");
 
-        int opcao = 0; //Resopsta do Menu CLI
+        int opcao = 0; //Resposta do Menu CLI
 
         do {
                 System.out.println();
@@ -33,38 +34,68 @@ public class Main {
 
             switch (opcao) {
                 case 1: //Adicionar nova tarefa
-                    System.out.println("=====================================================");
-                    System.out.println("================= Criar Nova Tarefa =================");
-                    System.out.println("=====================================================");
+                    System.out.println();
+                    System.out.println("╔════════════════════════════════════════════════╗");
+                    System.out.println("║                Criar Nova Tarefa               ║");
+                    System.out.println("╚════════════════════════════════════════════════╝");
 
-                    System.out.print("Nome: ");
+                    System.out.print("Nome: (Deixe em branco para não informar) ");
                     String nome = entrada.nextLine();
 
-                    System.out.print("Descricao: ");
+                    System.out.print("Descrição: (Deixe em branco para não informar) ");
                     String descricao = entrada.nextLine();
 
-                    System.out.print("Concluida?(Sim/Nao) :");
+                    System.out.print("ID: (Deixe em branco para não informar) ");
+                    String idInput = entrada.nextLine();
+                    Long id = 0L;
+
+                    if(!idInput.isEmpty()) {
+                        try {
+                            id = Long.parseLong(idInput);
+                        } catch (NumberFormatException e) {
+                            System.out.println("ID inválido. Será atribuído automaticamente.");
+                            id = 0L;
+                        }
+                    }
+
+                    System.out.print("Concluída? (Sim/Não): ");
                     String concluida = entrada.nextLine();
 
-                    boolean completa = false;
+                    boolean completa = concluida.equalsIgnoreCase("sim") || concluida.equalsIgnoreCase("s");
 
-                    if(concluida.equals("Sim") ||  concluida.equals("s") ||  concluida.equals("S") || concluida.equals("SIM") || concluida.equals("sim")){
-                            completa = true;
-                        }
-                        else {
-                            completa = false;
-                        }
+                    Tarefa tarefa;
 
+                    if (!nome.isEmpty() && !descricao.isEmpty() && id != null) {
+                        tarefa = new Tarefa(id, nome, descricao, completa);
+                    } else if (!nome.isEmpty() && !descricao.isEmpty()) {
+                        tarefa = new Tarefa(nome, descricao);
+                        tarefa.setCompleta(completa);
+                    } else if (!nome.isEmpty()) {
+                        tarefa = new Tarefa(nome);
+                        tarefa.setCompleta(completa);
+                    } else if (nome.isEmpty() && descricao.isEmpty()) {
+                        tarefa = new Tarefa();
+                        tarefa.setCompleta(completa);
+                    } else {
+                        System.out.println("Erro ao criar tarefa. Nome é obrigatório se descrição for fornecida.");
+                        break;
+                    }
 
-                    TarefaServico.AdicionarTarefa(nome, descricao, completa);
+                    TarefaServico.AdicionarTarefa(
+                            tarefa.getId() != null ? tarefa.getId() : 0L,
+                            tarefa.getTitulo() != null ? tarefa.getTitulo() : "",
+                            tarefa.getDescricao() != null ? tarefa.getDescricao() : "",
+                            tarefa.isCompleta()
+                    );
 
                     break;
 
 
                 case 2: //Visualizar nova lista de Tarefas
-                    System.out.println("=====================================================");
-                    System.out.println("============ Visualizar Lista de Tarefas ============");
-                    System.out.println("=====================================================");
+                    System.out.println();
+                    System.out.println("╔════════════════════════════════════════════════╗");
+                    System.out.println("║           Visualizar Lista de Tarefas          ║");
+                    System.out.println("╚════════════════════════════════════════════════╝");
 
                     TarefaServico.VisualizarTarefa();
 
@@ -72,30 +103,32 @@ public class Main {
 
 
                 case 3: //Editar Tarefa
-                    System.out.println("=====================================================");
-                    System.out.println("=================== Editar Tarefa ===================");
-                    System.out.println("=====================================================");
+                    System.out.println();
+                    System.out.println("╔════════════════════════════════════════════════╗");
+                    System.out.println("║                  Editar Tarefa                 ║");
+                    System.out.println("╚════════════════════════════════════════════════╝");
 
                     break;
 
 
                 case 4: //Excluir Tarefa
-                    System.out.println("=====================================================");
-                    System.out.println("================== Excluir Tarefa ===================");
-                    System.out.println("=====================================================");
+                    System.out.println();
+                    System.out.println("╔════════════════════════════════════════════════╗");
+                    System.out.println("║                  Excluir Tarefa                ║");
+                    System.out.println("╚════════════════════════════════════════════════╝");
 
 
                     break;
 
 
                 case 5: //Marcar Tarefa como concluida
-                    System.out.println("=====================================================");
-                    System.out.println("============ Marcar Tarefa Como Concluida ===========");
-                    System.out.println("=====================================================");
+                    System.out.println();
+                    System.out.println("╔════════════════════════════════════════════════╗");
+                    System.out.println("║           Marcar Tarefa Como Concluída         ║");
+                    System.out.println("╚════════════════════════════════════════════════╝");
 
 
                     break;
-
 
                 default: //Sair
                     opcao = 6;
