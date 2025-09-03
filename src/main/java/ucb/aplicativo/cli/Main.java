@@ -46,12 +46,6 @@ public class Main {
                     System.out.print("Concluida?(Sim/Nao) :");
                     String concluida = entrada.nextLine();
 
-                    int controladorCompleta = 0;
-
-                    if(concluida == null || concluida.isEmpty()){
-                        controladorCompleta = 1; // 1 significa nulo
-                    }
-
                     boolean completa = false;
 
                     if(concluida.equals("Sim") ||  concluida.equals("s") ||  concluida.equals("S") || concluida.equals("SIM") || concluida.equals("sim")){
@@ -62,7 +56,7 @@ public class Main {
                         }
 
 
-                    TarefaServico.AdicionarTarefa(nome, descricao, completa, controladorCompleta);
+                    TarefaServico.AdicionarTarefa(nome, descricao, completa);
 
                     break;
 
