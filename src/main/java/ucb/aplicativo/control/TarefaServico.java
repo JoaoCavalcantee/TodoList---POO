@@ -3,7 +3,6 @@ package ucb.aplicativo.control;
 import ucb.aplicativo.model.Tarefa;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +12,28 @@ public class TarefaServico {
     private static long ProximoID = 1;
 
     //Adicionar Tarefas
-    public static void AdicionarTarefa(long id, String titulo, String descricao, boolean completa, String dataCriacao) {
+    public static void AdicionarTarefa(String titulo, String descricao, boolean completa, int controladorCompleta) {
         Tarefa tarefa_nova = new Tarefa();
         tarefa_nova.setId(ProximoID++);
+            if(titulo == null || titulo.isEmpty())
+            {
+                //chama construtor 1
+            }
         tarefa_nova.setTitulo(titulo);
         tarefa_nova.setDescricao(descricao);
+            if(descricao == null || descricao.isEmpty())
+            {
+                //chama construtor 2
+            }
         tarefa_nova.setCompleta(completa);
-        tarefa_nova.setDataAgora(LocalDateTime.parse(dataCriacao));
+            if(controladorCompleta == 1) // 1 significa que Completa eh nulo, dai chama o construtor automatico (false);
+            {
+                //Chama construtor 3
+            }
+        tarefa_nova.setDataAgora(LocalDateTime.now());
 
         ListadeTarefas.add(tarefa_nova);
-        System.out.println("Tarefa " + tarefa_nova.getTitulo() + " adicionada com sucesso!");
+        System.out.println("Tarefa '" + tarefa_nova.getTitulo() + "' adicionada com sucesso!");
         return;
     }
     //Visualizar Tarefas

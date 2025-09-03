@@ -1,4 +1,6 @@
 package ucb.aplicativo.cli;
+import ucb.aplicativo.control.TarefaServico;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,68 +8,103 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("*****************************");
-        System.out.println("*Bem-Vindo Lista de Tarefas!*");
-        System.out.println("*****************************");
+        System.out.println("*****************************************************");
+        System.out.println("*********** Bem-Vindo a Lista de Tarefas! ***********");
+        System.out.println("*****************************************************");
 
-        int opcao = 0;
+        int opcao = 0; //Resopsta do Menu CLI
 
         do {
-            System.out.println();
-            System.out.println("1 - Para Adicionar Nova Tarefa");
-            System.out.println("2 - Para Visualizar a Lista de Tarefas");
-            System.out.println("3 - Para Editar Tarefa");
-            System.out.println("4 - para Excluir Tarefa");
-            System.out.println("5 - Para Marcar Tarefa como concluida");
-            System.out.println("6 - Para Sair");
+                System.out.println();
+                System.out.println("╔════════════════════════════════════════════════╗");
+                System.out.println("║            Sistema Lista de Tarefas            ║");
+                System.out.println("╠════════════════════════════════════════════════╣");
+                System.out.println("║ 1. Adicionar nova Tarefa                       ║");
+                System.out.println("║ 2. Visualizar Tarefas                          ║");
+                System.out.println("║ 3. Editar Tarefa                               ║");
+                System.out.println("║ 4. Excluir Tarefa                              ║");
+                System.out.println("║ 5. Marcar como Concluída                       ║");
+                System.out.println("║ 6. Sair                                        ║");
+                System.out.println("╚════════════════════════════════════════════════╝");
+                System.out.print("--> Escolha uma opção: ");
 
-            opcao = entrada.nextInt();
+            opcao = entrada.nextInt(); //Recebe a resposta de MENU do usuario
+            entrada.nextLine(); //Limpa Scanner
 
             switch (opcao) {
                 case 1: //Adicionar nova tarefa
-                    System.out.println("=======================");
-                    System.out.println("== Criar Nova Tarefa ==");
-                    System.out.println("=======================");
+                    System.out.println("=====================================================");
+                    System.out.println("================= Criar Nova Tarefa =================");
+                    System.out.println("=====================================================");
 
-                    System.out.println("ID: ");
-                    int id = entrada.nextInt();
+                    System.out.print("Nome: ");
+                    String nome = entrada.nextLine();
 
-                    System.out.println("Nome: ");
-                    String nome = entrada.next();
+                    System.out.print("Descricao: ");
+                    String descricao = entrada.nextLine();
 
-                    System.out.println("Descricao: ");
-                    String descricao = entrada.next();
+                    System.out.print("Concluida?(Sim/Nao) :");
+                    String concluida = entrada.nextLine();
 
-                    System.out.println("Concluida?: (True/False) ");
-                    boolean concluida = entrada.nextBoolean();
+                    int controladorCompleta = 0;
 
-                    System.out.println("Data de Criacao: (yyyy-mm-dd) ");
-                    String dataIniciodaTarefa = entrada.nextLine();
+                    if(concluida == null || concluida.isEmpty()){
+                        controladorCompleta = 1; // 1 significa nulo
+                    }
 
-                    //TODO: Colocar as informacoes coletadas no metodo e criar uma task
+                    boolean completa = false;
 
-                    System.out.println("Tarefa criada com sucesso!");
+                    if(concluida.equals("Sim") ||  concluida.equals("s") ||  concluida.equals("S") || concluida.equals("SIM") || concluida.equals("sim")){
+                            completa = true;
+                        }
+                        else {
+                            completa = false;
+                        }
 
-                    //Limpar Scanner
-                    entrada.nextLine();
+
+                    TarefaServico.AdicionarTarefa(nome, descricao, completa, controladorCompleta);
 
                     break;
+
 
                 case 2: //Visualizar nova lista de Tarefas
+                    System.out.println("=====================================================");
+                    System.out.println("============ Visualizar Lista de Tarefas ============");
+                    System.out.println("=====================================================");
+
+                    TarefaServico.VisualizarTarefa();
+
                     break;
+
 
                 case 3: //Editar Tarefa
+                    System.out.println("=====================================================");
+                    System.out.println("=================== Editar Tarefa ===================");
+                    System.out.println("=====================================================");
+
                     break;
+
 
                 case 4: //Excluir Tarefa
+                    System.out.println("=====================================================");
+                    System.out.println("================== Excluir Tarefa ===================");
+                    System.out.println("=====================================================");
+
+
                     break;
 
+
                 case 5: //Marcar Tarefa como concluida
+                    System.out.println("=====================================================");
+                    System.out.println("============ Marcar Tarefa Como Concluida ===========");
+                    System.out.println("=====================================================");
+
+
                     break;
+
 
                 default: //Sair
                     opcao = 6;
-
                     break;
             }
 

@@ -13,37 +13,33 @@ public class Tarefa {
     private boolean completa;
     private LocalDateTime dataAgora;
 
+
+    // Construtor Basico (1)
     public Tarefa(){
         this.dataAgora = LocalDateTime.now();
         this.completa = false;
-        this.id = gerarIdAutomatico();
     }
 
-    // Construtor com Titulo
+    // Construtor com Titulo (2)
 
     public Tarefa(String titulo){
         this();
         this.titulo = titulo;
     }
 
-    //Construtor com Titulo e Descricao
+    //Construtor com Titulo e Descricao (3)
 
     public Tarefa(String titulo, String descricao){
         this(titulo);
         this.descricao = descricao;
     }
 
-    //Construtor completo
+    //Construtor completo (4)
 
     public Tarefa(Long id, String titulo, String descricao, boolean completa){
         this(titulo, descricao);
         this.id = id;
         this.completa = completa;
-    }
-
-    private static Long gerarIdAutomatico(){
-        contadorId++;
-        return contadorId;
     }
 
 
