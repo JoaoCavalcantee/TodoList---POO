@@ -12,24 +12,12 @@ public class TarefaServico {
     private static long ProximoID = 1;
 
     //Adicionar Tarefas
-    public static void AdicionarTarefa(String titulo, String descricao, boolean completa, int controladorCompleta) {
-        Tarefa tarefa_nova = new Tarefa();
+    public static void AdicionarTarefa(String titulo, String descricao, boolean completa) {
+        Tarefa tarefa_nova = new Tarefa(); //Colocar os construtores aqui
         tarefa_nova.setId(ProximoID++);
-            if(titulo == null || titulo.isEmpty())
-            {
-                //chama construtor 1
-            }
         tarefa_nova.setTitulo(titulo);
         tarefa_nova.setDescricao(descricao);
-            if(descricao == null || descricao.isEmpty())
-            {
-                //chama construtor 2
-            }
         tarefa_nova.setCompleta(completa);
-            if(controladorCompleta == 1) // 1 significa que Completa eh nulo, dai chama o construtor automatico (false);
-            {
-                //Chama construtor 3
-            }
         tarefa_nova.setDataAgora(LocalDateTime.now());
 
         ListadeTarefas.add(tarefa_nova);
