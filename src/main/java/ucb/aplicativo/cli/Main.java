@@ -1,8 +1,11 @@
 package ucb.aplicativo.cli;
 import ucb.aplicativo.control.TarefaServico;
 import ucb.aplicativo.model.Tarefa;
+import static ucb.aplicativo.control.TarefaServico.EditarTarefa;
 
 import java.util.Scanner;
+
+
 
 public class Main {
     public static void main(String[] args) {
@@ -108,6 +111,7 @@ public class Main {
                     System.out.println("║                  Editar Tarefa                 ║");
                     System.out.println("╚════════════════════════════════════════════════╝");
 
+                    EditarTarefa();
                     break;
 
 

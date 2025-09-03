@@ -2,15 +2,19 @@ package ucb.aplicativo.control;
 
 import ucb.aplicativo.model.Tarefa;
 
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TarefaServico {
     private static List<Tarefa> ListadeTarefas = new ArrayList<>();
 
     private static long ProximoID = 1;
+
+    static Scanner scanner = new Scanner(System.in);
 
     //Adicionar Tarefas
     public static void AdicionarTarefa(Long id, String titulo, String descricao, boolean completa) {
@@ -55,7 +59,78 @@ public class TarefaServico {
         }
 
 
-        //TODO: EditarTarefa()
+        public static void EditarTarefa(){
+
+            long IdProcurado;
+            int i ;
+            long TarefaAtualizada = 100;
+
+            if(ListadeTarefas.isEmpty()){
+                System.out.println("Nenhuma Tarefa foi adicionada!");
+                return;
+            }
+
+            System.out.println("Digite o ID da tarefa que deseja editar:");
+               IdProcurado = scanner.nextLong();
+               scanner.nextLine(); //ARRUMAR BUG DE BUFFER
+
+
+                //PROCURA O ID
+                 for (i = 0; i < ListadeTarefas.size(); i++) {
+                     if (IdProcurado == ListadeTarefas.get(i).getId()) {
+                         TarefaAtualizada = i;
+                         break;
+                     }
+                 }
+
+            if(TarefaAtualizada == 100){   //nao achou
+                    System.out.println("ID inserido é inexistente!");
+                    return;
+                }else{                     //achou
+                    //NOME
+                    System.out.print("Novo nome: (Deixe em branco para não editar) ");
+                           String NomeNovo = scanner.nextLine();
+                           if(!NomeNovo.isEmpty()){
+                               ListadeTarefas.get(i).setTitulo(NomeNovo);
+                           }
+
+                    //DESCRIÇÃO
+                    System.out.print("Nova descrição: (Deixe em branco para não editar) ");
+                           String DescricaoNovo = scanner.nextLine();
+                           if(!DescricaoNovo.isEmpty()){
+                               ListadeTarefas.get(i).setDescricao(DescricaoNovo);
+                           }
+                    //ID
+                    System.out.print("Novo ID: (Deixe em branco para não editar) ");
+                           String IdNovo = scanner.nextLine();
+                           if (!IdNovo.isEmpty()) {
+                                try {
+                                    long id = Long.parseLong(IdNovo);
+                                    ListadeTarefas.get(i).setId(id);
+                                } catch (NumberFormatException e) {
+                                    System.out.println("ID inválido! Digite apenas números inteiros.");
+                                }
+                           }
+
+                    //STATUS
+                    System.out.print("Concluída? (Sim/Não): ");                }
+                            String NovoStatus = scanner.nextLine();
+                            if(NovoStatus.equalsIgnoreCase("sim") || NovoStatus.equalsIgnoreCase("s") ){
+                                ListadeTarefas.get(i).setCompleta(true);
+                            }
+                            if( NovoStatus.equalsIgnoreCase("nao") || NovoStatus.equalsIgnoreCase("n")){
+                                ListadeTarefas.get(i).setCompleta(false);
+                            }
+
+            System.out.println();
+            System.out.println("╔════════════════════════════════════════════════╗");
+            System.out.println("║            Tarefa editada com sucesso!         ║");
+            System.out.println("╚════════════════════════════════════════════════╝");
+            System.out.println();
+        }
+
+
+
 
         //TODO: ExcluirTarefa()
 
