@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="Capítulo 1.9.4">
+    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" afterDir="false" />
     </list>
@@ -32,17 +33,20 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="3298evPYkrAZoWgAaYW2i8Wb8UC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
@@ -116,16 +120,5 @@
     <MESSAGE value="Capítulo 1.9.3 - README atualizado" />
     <MESSAGE value="Capítulo 1.9.4" />
     <option name="LAST_COMMIT_MESSAGE" value="Capítulo 1.9.4" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

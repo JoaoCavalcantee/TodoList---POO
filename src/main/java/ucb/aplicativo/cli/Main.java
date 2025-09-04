@@ -68,7 +68,7 @@ public class Main {
                     System.out.println("║                  Excluir Tarefa                ║");
                     System.out.println("╚════════════════════════════════════════════════╝");
 
-                    //TODO: Chamar a função de excluir
+                    TarefaServico.excluirTarefa();
 
                     break;
 
