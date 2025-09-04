@@ -12,11 +12,6 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-
-        //System.out.println("*****************************************************");
-        //System.out.println("*********** Bem-Vindo a Lista de Tarefas! ***********");
-        //System.out.println("*****************************************************");
-
         int opcao = 0; //Resposta do Menu CLI
 
         do {
