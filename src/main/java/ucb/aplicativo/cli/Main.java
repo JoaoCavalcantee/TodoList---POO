@@ -42,54 +42,7 @@ public class Main {
                     System.out.println("║                Criar Nova Tarefa               ║");
                     System.out.println("╚════════════════════════════════════════════════╝");
 
-                    System.out.print("Nome: (Deixe em branco para não informar) ");
-                    String nome = entrada.nextLine();
-
-                    System.out.print("Descrição: (Deixe em branco para não informar) ");
-                    String descricao = entrada.nextLine();
-
-                    System.out.print("ID: (Deixe em branco para não informar) ");
-                    String idInput = entrada.nextLine();
-                    Long id = 0L;
-
-                    if(!idInput.isEmpty()) {
-                        try {
-                            id = Long.parseLong(idInput);
-                        } catch (NumberFormatException e) {
-                            System.out.println("ID inválido. Será atribuído automaticamente.");
-                            id = 0L;
-                        }
-                    }
-
-                    System.out.print("Concluída? (Sim/Não): ");
-                    String concluida = entrada.nextLine();
-
-                    boolean completa = concluida.equalsIgnoreCase("sim") || concluida.equalsIgnoreCase("s");
-
-                    Tarefa tarefa;
-
-                    if (!nome.isEmpty() && !descricao.isEmpty() && id != null) {
-                        tarefa = new Tarefa(id, nome, descricao, completa);
-                    } else if (!nome.isEmpty() && !descricao.isEmpty()) {
-                        tarefa = new Tarefa(nome, descricao);
-                        tarefa.setCompleta(completa);
-                    } else if (!nome.isEmpty()) {
-                        tarefa = new Tarefa(nome);
-                        tarefa.setCompleta(completa);
-                    } else if (nome.isEmpty() && descricao.isEmpty()) {
-                        tarefa = new Tarefa();
-                        tarefa.setCompleta(completa);
-                    } else {
-                        System.out.println("Erro ao criar tarefa. Nome é obrigatório se descrição for fornecida.");
-                        break;
-                    }
-
-                    TarefaServico.AdicionarTarefa(
-                            tarefa.getId() != null ? tarefa.getId() : 0L,
-                            tarefa.getTitulo() != null ? tarefa.getTitulo() : "",
-                            tarefa.getDescricao() != null ? tarefa.getDescricao() : "",
-                            tarefa.isCompleta()
-                    );
+                    TarefaServico.CriarTarefa();
 
                     break;
 

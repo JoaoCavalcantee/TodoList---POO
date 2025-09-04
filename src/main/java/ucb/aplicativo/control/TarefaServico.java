@@ -16,6 +16,58 @@ public class TarefaServico {
 
     static Scanner scanner = new Scanner(System.in);
 
+    public static void CriarTarefa(){
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Nome: (Deixe em branco para não informar) ");
+        String nome = entrada.nextLine();
+
+        System.out.print("Descrição: (Deixe em branco para não informar) ");
+        String descricao = entrada.nextLine();
+
+        System.out.print("ID: (Deixe em branco para não informar) ");
+        String idInput = entrada.nextLine();
+        Long id = 0L;
+
+        if(!idInput.isEmpty()) {
+            try {
+                id = Long.parseLong(idInput);
+            } catch (NumberFormatException e) {
+                System.out.println("ID inválido. Será atribuído automaticamente.");
+                id = 0L;
+            }
+        }
+
+        System.out.print("Concluída? (Sim/Não): ");
+        String concluida = entrada.nextLine();
+
+        boolean completa = concluida.equalsIgnoreCase("sim") || concluida.equalsIgnoreCase("s");
+
+        Tarefa tarefa = null;
+
+        if (!nome.isEmpty() && !descricao.isEmpty() && id != null) {
+            tarefa = new Tarefa(id, nome, descricao, completa);
+        } else if (!nome.isEmpty() && !descricao.isEmpty()) {
+            tarefa = new Tarefa(nome, descricao);
+            tarefa.setCompleta(completa);
+        } else if (!nome.isEmpty()) {
+            tarefa = new Tarefa(nome);
+            tarefa.setCompleta(completa);
+        } else if (nome.isEmpty() && descricao.isEmpty()) {
+            tarefa = new Tarefa();
+            tarefa.setCompleta(completa);
+        } else {
+            System.out.println("Erro ao criar tarefa. Nome é obrigatório se descrição for fornecida.");
+        }
+
+        TarefaServico.AdicionarTarefa(
+                tarefa.getId() != null ? tarefa.getId() : 0L,
+                tarefa.getTitulo() != null ? tarefa.getTitulo() : "",
+                tarefa.getDescricao() != null ? tarefa.getDescricao() : "",
+                tarefa.isCompleta()
+        );
+    }
+
     //Adicionar Tarefas
     public static void AdicionarTarefa(Long id, String titulo, String descricao, boolean completa) {
         Tarefa tarefa_nova = new Tarefa(); //Colocar os construtores aqui

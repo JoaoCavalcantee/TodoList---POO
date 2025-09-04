@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="Id Automático adicionado" />
+    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="Capítulo 1.9.1">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,13 +37,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,11 +62,31 @@
       <option name="project" value="LOCAL" />
       <updated>1756823736458</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Capítulo 1.9.1">
+      <option name="closed" value="true" />
+      <created>1756989783123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756989783123</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Id Automático adicionado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Id Automático adicionado" />
+    <MESSAGE value="Capítulo 1.9.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Capítulo 1.9.1" />
   </component>
 </project>
