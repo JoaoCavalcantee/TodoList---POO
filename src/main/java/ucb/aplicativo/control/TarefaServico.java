@@ -16,7 +16,7 @@ public class TarefaServico {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public static void CriarTarefa(){
+    public static void CriarTarefa() {
         Scanner entrada = new Scanner(System.in);
 
         System.out.print("Nome: (Deixe em branco para não informar) ");
@@ -29,7 +29,7 @@ public class TarefaServico {
         String idInput = entrada.nextLine();
         Long id = 0L;
 
-        if(!idInput.isEmpty()) {
+        if (!idInput.isEmpty()) {
             try {
                 id = Long.parseLong(idInput);
             } catch (NumberFormatException e) {
