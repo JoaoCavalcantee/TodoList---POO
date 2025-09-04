@@ -42,7 +42,6 @@ public class Tarefa {
         this.completa = completa;
     }
 
-
     //Setters ((SET) -> Alterar Variavel Privada)
 
     public void setId(Long id) {
@@ -64,7 +63,6 @@ public class Tarefa {
     public void setDataAgora(LocalDateTime dataAgora) {
         this.dataAgora = dataAgora;
     }
-
 
     //Getters ((GET) -> Resgatar Valor de Variavel Privada)
 

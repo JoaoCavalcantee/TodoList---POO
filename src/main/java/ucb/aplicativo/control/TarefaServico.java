@@ -1,13 +1,12 @@
 package ucb.aplicativo.control;
 
-import ucb.aplicativo.model.Tarefa;
-
-import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import ucb.aplicativo.model.Tarefa;
 
 public class TarefaServico {
     private static List<Tarefa> ListadeTarefas = new ArrayList<>();

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="Capítulo 1.9.2 - Método de criação de tarefa encapsulado" />
+    <list default="true" id="450dfe0e-b758-4dab-9aef-fb27f6a4cb97" name="Changes" comment="Capítulo 1.9.4">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ucb/aplicativo/control/TarefaServico.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -76,7 +79,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756990153406</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Capítulo 1.9.3 - README atualizado">
+      <option name="closed" value="true" />
+      <created>1756990292246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756990292246</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Capítulo 1.9.4">
+      <option name="closed" value="true" />
+      <created>1756990535984</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756990535984</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +113,19 @@
     <MESSAGE value="Id Automático adicionado" />
     <MESSAGE value="Capítulo 1.9.1" />
     <MESSAGE value="Capítulo 1.9.2 - Método de criação de tarefa encapsulado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Capítulo 1.9.2 - Método de criação de tarefa encapsulado" />
+    <MESSAGE value="Capítulo 1.9.3 - README atualizado" />
+    <MESSAGE value="Capítulo 1.9.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Capítulo 1.9.4" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ucb/aplicativo/cli/Main.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

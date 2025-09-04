@@ -1,9 +1,6 @@
 package ucb.aplicativo.cli;
 
 import ucb.aplicativo.control.TarefaServico;
-import ucb.aplicativo.model.Tarefa;
-
-import static ucb.aplicativo.control.TarefaServico.EditarTarefa;
 
 import java.util.Scanner;
 
@@ -12,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
+
         int opcao = 0; //Resposta do Menu CLI
 
         do {
@@ -60,7 +58,7 @@ public class Main {
                     System.out.println("║                  Editar Tarefa                 ║");
                     System.out.println("╚════════════════════════════════════════════════╝");
 
-                    EditarTarefa();
+                    TarefaServico.EditarTarefa();
                     break;
 
 
