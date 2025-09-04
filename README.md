@@ -15,3 +15,5 @@ Ao final, cada grupo deverá entregar o **link do repositório** GitHub contendo
 
 ## Cronograma:
 **04/09/2025** - Entrega do Link do Git com a estrutura de pacotes e o modelo.
+
+**10/09/2025** - CRUD
