@@ -131,6 +131,22 @@ public class Main {
                     System.out.println("║           Marcar Tarefa Como Concluída         ║");
                     System.out.println("╚════════════════════════════════════════════════╝");
 
+                    System.out.println("Você deseja marcar por:");
+                    System.out.println("1. ID");
+                    System.out.println("2. Nome");
+                    int tipoBusca = entrada.nextInt();
+                    entrada.nextLine();
+                    Long idBusca = null;
+                    String nomeBusca = null;
+                    if (tipoBusca == 1) {
+                        System.out.print("Digite o ID da tarefa: ");
+                        idBusca = entrada.nextLong();
+                        entrada.nextLine();
+                    } else if (tipoBusca == 2) {
+                        System.out.print("Digite o nome exato da tarefa: ");
+                        nomeBusca = entrada.nextLine();
+                    }
+                    TarefaServico.MarcarTarefaComoConcluida(idBusca, nomeBusca);
 
                     break;
 

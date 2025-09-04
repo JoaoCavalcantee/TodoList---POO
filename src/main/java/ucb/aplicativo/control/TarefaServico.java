@@ -135,5 +135,50 @@ public class TarefaServico {
         //TODO: ExcluirTarefa()
 
         //TODO: MarcarTarefa()
+        public static void MarcarTarefaComoConcluida(Long id, String titulo) {
+            boolean encontrada = false;
+
+            // Caso o ID seja fornecido (não nulo e diferente de 0), busca por ID
+            if (id != null && id != 0L) {
+                for (Tarefa tarefa : ListadeTarefas) {
+                    if (tarefa.getId().equals(id)) {
+                        encontrada = true;
+                        if (tarefa.isCompleta()) {
+                            System.out.println("Tarefa já está marcada como concluída!");
+                        } else {
+                            tarefa.setCompleta(true);
+                            System.out.println("Tarefa '" + tarefa.getTitulo() + "' foi marcada como concluída!");
+                        }
+                        break;
+                    }
+                }
+                if (!encontrada) {
+                    System.out.println("Tarefa com o ID informado não foi encontrada.");
+                }
+                return;
+            }
+
+            // Caso o título seja fornecido (não nulo e não vazio), busca por nome
+            if (titulo != null && !titulo.trim().isEmpty()) {
+                for (Tarefa tarefa : ListadeTarefas) {
+                    if (tarefa.getTitulo() != null && tarefa.getTitulo().equalsIgnoreCase(titulo)) {
+                        encontrada = true;
+                        if (tarefa.isCompleta()) {
+                            System.out.println("Tarefa '" + tarefa.getTitulo() + "' já está marcada como concluída!");
+                        } else {
+                            tarefa.setCompleta(true);
+                            System.out.println("Tarefa '" + tarefa.getTitulo() + "' foi marcada como concluída!");
+                        }
+                    }
+                }
+                if (!encontrada) {
+                    System.out.println("Nenhuma tarefa com esse nome foi encontrada.");
+                }
+                return;
+            }
+
+            System.out.println("Informe um ID ou nome válido para marcar tarefa como concluída.");
+        }
+
 
 }
